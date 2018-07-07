@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  service1:
+    container_name: service1
+    image: 'kurtis/service1:latest'
+    ports:
+      - 8081:8080
+  service2:
+    container_name: service2
+    image: 'kurtis/service2:latest'
+    ports:
+      - 8082:8080
+  service3:
+    container_name: service3
+    image: 'kurtis/service3:latest'
+    ports:
+      - 8083:8080
+  service4:
+    container_name: service4
+    image: 'kurtis/service4:latest'
+    ports:
+      - 8084:8080
