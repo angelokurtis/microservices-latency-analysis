@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: @project.name@
+  zipkin:
+    base-url: http://zipkin:9411/
