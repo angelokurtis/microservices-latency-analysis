@@ -1,5 +1,6 @@
 package br.com.kurtis.labs.service3;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +25,7 @@ public class Service3Application {
   }
 }
 
+@Log4j2
 @RestController
 class Service3Controller {
 
@@ -35,6 +37,7 @@ class Service3Controller {
 
   @GetMapping("/service3")
   Mono<String> service3() {
+    log.info("getting response from service 3");
     return client.callService2().map(service4 -> "service3 -> " + service4);
   }
 }
