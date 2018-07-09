@@ -21,3 +21,8 @@ services:
     image: 'kurtis/service4:latest'
     ports:
       - 8084:8080
+  zipkin:
+    container_name: zipkin
+    image: 'openzipkin/zipkin:2.10'
+    ports:
+      - 9411:9411
