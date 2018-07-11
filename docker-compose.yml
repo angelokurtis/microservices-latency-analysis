@@ -37,3 +37,23 @@ services:
     image: 'openzipkin/zipkin:2.10'
     ports:
       - 9411:9411
+    environment:
+      STORAGE_TYPE: 'elasticsearch'
+      ES_CLUSTER: 'monitoring'
+      ES_HOSTS: 'db:9300'
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: 'docker.elastic.co/elasticsearch/elasticsearch:6.3.1'
+    volumes:
+      - zipkin-db:/usr/share/elasticsearch/data
+    environment:
+      cluster.name: 'monitoring'
+      discovery.type: 'single-node'
+      bootstrap.memory_lock: 'true'
+
+volumes:
+  zipkin-db:
+    driver: local
