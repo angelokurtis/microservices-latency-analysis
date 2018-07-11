@@ -53,6 +53,12 @@
         <configuration>
           <resources>
             <labels>
+              <env>
+                <SERVICE1_ADDRESS>service1:8080</SERVICE1_ADDRESS>
+                <SERVICE2_ADDRESS>service2:8080</SERVICE2_ADDRESS>
+                <SERVICE3_ADDRESS>service3:8080</SERVICE3_ADDRESS>
+                <SERVICE4_ADDRESS>service4:8080</SERVICE4_ADDRESS>
+              </env>
               <deployment>
                 <property>
                   <name>version</name>
