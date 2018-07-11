@@ -20,7 +20,7 @@
   </parent>
 
   <properties>
-    <docker-plugin.version>0.26.0</docker-plugin.version>
+    <docker-plugin.version>3.5.40</docker-plugin.version>
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -35,6 +35,7 @@
   </modules>
 
   <dependencies>
+
     <dependency>
       <groupId>io.projectreactor</groupId>
       <artifactId>reactor-test</artifactId>
@@ -52,14 +53,24 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-webflux</artifactId>
     </dependency>
+
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-zipkin</artifactId>
+      <groupId>io.opentracing.contrib</groupId>
+      <artifactId>opentracing-spring-cloud-starter</artifactId>
+      <version>0.1.15</version>
     </dependency>
+
+    <dependency>
+      <groupId>io.jaegertracing</groupId>
+      <artifactId>jaeger-tracerresolver</artifactId>
+      <version>0.30.0</version>
+    </dependency>
+
   </dependencies>
 
   <dependencyManagement>
@@ -79,8 +90,11 @@
       <plugins>
         <plugin>
           <groupId>io.fabric8</groupId>
-          <artifactId>docker-maven-plugin</artifactId>
+          <artifactId>fabric8-maven-plugin</artifactId>
           <version>${docker-plugin.version}</version>
+          <configuration>
+            <ignoreServices>false</ignoreServices>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
