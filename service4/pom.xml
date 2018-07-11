@@ -51,6 +51,16 @@
         <artifactId>fabric8-maven-plugin</artifactId>
         <version>${docker-plugin.version}</version>
         <configuration>
+          <resources>
+            <labels>
+              <deployment>
+                <property>
+                  <name>version</name>
+                  <value>v2</value>
+                </property>
+              </deployment>
+            </labels>
+          </resources>
           <images>
             <image>
               <name>kurtis/${project.artifactId}</name>
