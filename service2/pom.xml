@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>service2</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>v2</version>
   <packaging>jar</packaging>
 
   <name>service2</name>
@@ -53,6 +53,7 @@
         <configuration>
           <resources>
             <env>
+              <JAEGER_SERVICE_NAME>service2</JAEGER_SERVICE_NAME>
               <SERVICE1_ADDRESS>service1:8080</SERVICE1_ADDRESS>
               <SERVICE2_ADDRESS>service2:8080</SERVICE2_ADDRESS>
               <SERVICE3_ADDRESS>service3:8080</SERVICE3_ADDRESS>
@@ -69,7 +70,7 @@
           </resources>
           <images>
             <image>
-              <name>kurtis/${project.artifactId}</name>
+              <name>claudioed/${project.artifactId}</name>
               <build>
                 <from>openjdk:8-jre-alpine3.7</from>
                 <entryPoint>java -jar /app/${project.build.finalName}.jar</entryPoint>
