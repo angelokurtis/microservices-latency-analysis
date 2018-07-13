@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>service4</artifactId>
-  <version>v2</version>
+  <version>v3</version>
   <packaging>jar</packaging>
 
   <name>service4</name>
@@ -45,6 +45,7 @@
   </dependencies>
 
   <build>
+    <finalName>sevice4</finalName>
     <plugins>
       <plugin>
         <groupId>io.fabric8</groupId>
@@ -70,7 +71,7 @@
           </resources>
           <images>
             <image>
-              <name>claudioed/${project.artifactId}</name>
+              <name>ozello/${project.artifactId}</name>
               <build>
                 <from>openjdk:8-jre-alpine3.7</from>
                 <entryPoint>java -jar /app/${project.build.finalName}.jar</entryPoint>
@@ -108,5 +109,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
