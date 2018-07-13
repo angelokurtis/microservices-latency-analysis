@@ -1,11 +1,13 @@
 package br.com.kurtis.labs.service2;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import reactor.core.publisher.Mono;
 
+@Log4j2
 @Service
 public class Service2Client {
 
@@ -20,6 +22,7 @@ public class Service2Client {
   }
 
   Mono<String> callService3() {
+    log.info("calling service3");
     return this.webClient3.get()
         .uri("/service3")
         .retrieve()
@@ -27,6 +30,7 @@ public class Service2Client {
   }
 
   Mono<String> callService4() {
+    log.info("calling service4");
     return this.webClient4.get()
         .uri("/service4")
         .retrieve()

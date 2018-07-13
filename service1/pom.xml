@@ -54,17 +54,21 @@
           <resources>
             <env>
               <JAEGER_SERVICE_NAME>service1</JAEGER_SERVICE_NAME>
-              <SERVICE1_ADDRESS>service1:8080</SERVICE1_ADDRESS>
-              <SERVICE2_ADDRESS>service2:8080</SERVICE2_ADDRESS>
-              <SERVICE3_ADDRESS>service3:8080</SERVICE3_ADDRESS>
-              <SERVICE4_ADDRESS>service4:8080</SERVICE4_ADDRESS>
+              <SERVICE1_ADDRESS>http://service1:8080</SERVICE1_ADDRESS>
+              <SERVICE2_ADDRESS>http://service2:8080</SERVICE2_ADDRESS>
+              <SERVICE3_ADDRESS>http://service3:8080</SERVICE3_ADDRESS>
+              <SERVICE4_ADDRESS>http://service4:8080</SERVICE4_ADDRESS>
             </env>
             <labels>
               <deployment>
-                <propenverty>
+                <property>
                   <name>version</name>
                   <value>v2</value>
-                </propenverty>
+                </property>
+                <property>
+                  <name>expose</name>
+                  <value>false</value>
+                </property>
               </deployment>
             </labels>
           </resources>
