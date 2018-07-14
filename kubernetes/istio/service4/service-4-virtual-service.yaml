@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: service4-virtual-service
+spec:
+  hosts:
+  - service4
+  gateways:
+  - virtual-service-gateway
+  http:
+  - route:
+    - destination:
+        host: service4
+        subset: v2

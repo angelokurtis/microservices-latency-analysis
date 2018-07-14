@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service4-destination-rule
+spec:
+  host: service4
+  subsets:
+  - name: v2
+    labels:
+      version: v2
