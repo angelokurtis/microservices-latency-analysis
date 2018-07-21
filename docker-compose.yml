@@ -3,7 +3,7 @@ version: '3'
 services:
   service1:
     container_name: service1
-    image: 'kurtis/service1:latest'
+    image: 'kurtis/service1:v1'
     ports:
       - 8081:8080
     environment:
@@ -11,7 +11,7 @@ services:
 
   service2:
     container_name: service2
-    image: 'kurtis/service2:latest'
+    image: 'kurtis/service2:v1'
     ports:
       - 8082:8080
     environment:
@@ -20,7 +20,7 @@ services:
 
   service3:
     container_name: service3
-    image: 'kurtis/service3:latest'
+    image: 'kurtis/service3:v1'
     ports:
       - 8083:8080
     environment:
@@ -28,7 +28,7 @@ services:
 
   service4:
     container_name: service4
-    image: 'kurtis/service4:latest'
+    image: 'kurtis/service4:v1'
     ports:
       - 8084:8080
 
@@ -45,7 +45,7 @@ services:
 
   db:
     container_name: db
-    image: 'openzipkin/zipkin-mysql'
+    image: 'openzipkin/zipkin-mysql:2.10'
 
 volumes:
   zipkin-db:
