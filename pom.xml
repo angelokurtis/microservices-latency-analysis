@@ -6,7 +6,7 @@
 
   <groupId>br.com.kurtis.labs</groupId>
   <artifactId>microservices-latency-analysis</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>v1</version>
   <packaging>pom</packaging>
 
   <name>Microservices Latency Analysis</name>
