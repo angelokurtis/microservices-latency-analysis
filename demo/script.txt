@@ -1,0 +1,30 @@
+
+======================================= (GKE) =======================================
+
+## Send Request to Clusters (GKE)
+artillery quick --count 10 -n 20 http://104.198.144.85/service1
+
+## Show the Jaeger Query (GKE)
+http://35.188.206.72/search
+
+## Send long requests to the Clusters (GKE)
+artillery quick --count 100 -n 20 http://104.198.144.85/service1
+
+## Show the Service Graph on (GKE)
+http://35.193.22.175/force/forcegraph.html?time_horizon=15s&filter_empty=true
+
+## Show the Grafana Dashboards (GKE)
+http://35.226.3.195/
+
+======================================= (GKE) =======================================
+
+====================================== (AZURE) ======================================
+
+## Send long requests to the Clusters (AZURE)
+artillery quick --count 100 -n 20 http://168.62.181.235/service1
+
+## Show the Kiali Dashboard
+http://104.211.61.0/
+
+
+====================================== (AZURE) ======================================
