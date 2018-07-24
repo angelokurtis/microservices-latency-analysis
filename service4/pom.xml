@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>service4</artifactId>
-  <version>v2</version>
+  <version>v4</version>
   <packaging>jar</packaging>
 
   <name>service4</name>
