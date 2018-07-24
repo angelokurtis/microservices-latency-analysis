@@ -20,9 +20,11 @@ public class Service2Controller {
 
   @GetMapping("/service2")
   Mono<String> service2() {
-    log.info("getting response from service 2");
+    log.info("running service 2");
     final boolean goThrough3 = new Random().nextBoolean();
-    return (goThrough3 ? this.client.callService3() : this.client.callService4())
+    final Mono<String> response = (goThrough3 ? this.client.callService3() : this.client.callService4())
         .map(service3or4 -> "service2 -> " + service3or4);
+    log.info("getting response from service 2");
+    return response;
   }
 }

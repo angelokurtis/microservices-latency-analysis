@@ -12,7 +12,9 @@ public class Service4Controller {
 
   @GetMapping("/service4")
   Mono<String> service4() {
+    log.info("running service 4");
+    Mono<String> response = Mono.just("service 4");
     log.info("getting response from service 4");
-    return Mono.just("service 4");
+    return response;
   }
 }

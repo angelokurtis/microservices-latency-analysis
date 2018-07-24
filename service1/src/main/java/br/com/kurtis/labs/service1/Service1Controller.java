@@ -18,8 +18,9 @@ public class Service1Controller {
 
   @GetMapping("/service1")
   Mono<String> service1() {
+    log.info("running service 1");
+    final Mono<String> response = client.callService2().map(service2 -> "service1 -> " + service2);
     log.info("getting response from service 1");
-    return client.callService2().map(service2 -> "service1 -> " + service2);
-
+    return response;
   }
 }
